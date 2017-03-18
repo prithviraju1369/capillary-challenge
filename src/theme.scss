@@ -1,0 +1,11 @@
+@import '~@angular/material/core/theming/all-theme';
+@include mat-core();
+
+md-input-container {
+  .mat-input-underline{
+    border-color: mat-color($mat-green, 500, 1);
+  }
+  .mat-input-placeholder-wrapper>label{
+      color: mat-color($mat-green, 500, 1);
+  }
+}

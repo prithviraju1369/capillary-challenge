@@ -1,28 +1,29 @@
-# Capillary
+##Contactus
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0-rc.2.
+##This project was generated with Angular CLI version 1.0.0-rc.1.
 
-## Development server
+## Techs
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Front End: Angular2, Angular Material2, Rxjs (Observables), underscore Js
+Server: Node JS, Express Js
+Database: Mongodb (Hosted in Mlab)
+CLI: Angular-Cli
 
-## Code scaffolding
+##Development server
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive/pipe/service/class/module`.
+##install angular cli
 
-## Build
+1.npm install -g @angular/cli@latest
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+##install project dependencies
 
-## Running unit tests
+2.npm install
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+##build local project
 
-## Running end-to-end tests
+ng build --prod --aot (creates Dist Folder)
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
+##Run Locally
 
-## Further help
+node server.js
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).

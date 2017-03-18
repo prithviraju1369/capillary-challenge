@@ -1,0 +1,62 @@
+<div class="index-container">
+    <div class="search-filter">
+        <div class="search-filter-auto">
+        <md-input-container >
+            <input mdInput placeholder="Search (by name)" [formControl]="searchCtrl" id="listSearch" #term type="search" name="search" >
+        </md-input-container>
+        </div>
+        <div>
+            <img src="./../assets/ic_filter_list_black_24dp_2x.png" style="color:#8BC34A;vertical-align: middle;" (click)="filterClick(filter)">
+            <div class="filter" [hidden]="!showFilter" #filter>
+                <div class="score">
+                    <span>Score</span>
+                    <span style="flex:1 1 auto;"></span>
+                    <img class="filter-img" src="./../assets/ic_keyboard_arrow_up_black_24dp_1x.png" alt="ascending" title="ascending" #ascending (click)="ascendingFun()">
+                    <img class="filter-img" src="./../assets/ic_keyboard_arrow_down_black_24dp_1x.png" alt="descending" title="descending" #descending  (click)="descendingFun()" >
+                </div>
+                <div class="platform">
+                    <span>Sort Platform</span>
+                    <md-checkbox [(ngModel)]="platform" color="primary" (click)="sortPlatform()"></md-checkbox>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-container">
+        <div class="form-body card" *ngFor="let game of pagedItems">
+            <div class="card-head">
+                <img src="./../assets/dummy_image.png" width="100px" height="100px">
+                <div class="card-content">
+                    <div class="card-title">{{game.title}}</div>
+                    <div class="card-sub-title">{{game.platform}}</div>
+                </div>
+                <span style="flex:1 1 auto;"></span>
+                <div class="editors-choice" *ngIf="game.editors_choice=='Y'"></div>
+            </div>
+            <div class="card-footer">
+                <div>Genre: {{game.genre}}</div>
+                <div>{{game.score}}</div>
+            </div>
+        </div>
+    </div>
+    <div class="">
+        <div class="pagination">
+            <div *ngIf="pager.pages && pager.pages.length" class="pagination-container">
+                <div [ngClass]="{disabled:pager.currentPage === 1}" class="page">
+                    <a (click)="setPage(1)">First</a>
+                </div>
+                <div [ngClass]="{disabled:pager.currentPage === 1}" class="page">
+                    <a (click)="setPage(pager.currentPage - 1)" >Previous</a>
+                </div>
+                <div *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}" class="page">
+                    <a (click)="setPage(page)">{{page}}</a>
+                </div>
+                <div [ngClass]="{disabled:pager.currentPage === pager.totalPages}" class="page">
+                    <a (click)="setPage(pager.currentPage + 1)">Next</a>
+                </div>
+                <div [ngClass]="{disabled:pager.currentPage === pager.totalPages}" class="page">
+                    <a (click)="setPage(pager.totalPages)">Last</a>
+                </div>
+            </div>
+        </div>
+    </div>
+<div>    
